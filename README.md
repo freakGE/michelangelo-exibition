@@ -4,7 +4,7 @@
     <img src="public/favicon.ico" alt="Logo" width="80" height="80">
   </a>
   <h1 align="center">Michelangelo Exhibition</h1>
-  ![Main-Page](public/thumbnail.png)
+  <img src="public/thumbnail.png" alt="Michelangelo Exhibition main page">
 </div>
 
 ## About The Project

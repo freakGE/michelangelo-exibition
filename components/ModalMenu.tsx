@@ -23,10 +23,8 @@ const ModalMenu = ({ isVisible, selected }: ModalMenuProps) => {
       left: 0,
       behavior: "smooth",
     });
-    //!
     setCoordinateY(e.currentTarget.offsetTop);
     dispatch(openHamburger(false));
-    //!
 
     const href = e.currentTarget.href.split("/");
 
@@ -79,7 +77,6 @@ const ModalMenu = ({ isVisible, selected }: ModalMenuProps) => {
               Collection
             </Link>
             <span
-              // className={`h-[25px] mt-[5.5px] modal-line`}
               className={`h-[30px] mt-[5px] modal-line`}
               style={{ top: `${coordinateY}px` }}
             />

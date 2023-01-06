@@ -44,7 +44,6 @@ const ArtCollection = ({ full }: ArtCollectionProps) => {
       style={{
         marginBottom: full ? `5rem` : `0rem`,
       }}
-      // md:pb-[5rem] sm:pb-[4rem] pb-[3rem]
     >
       <div className="flex flex-col w-11/12 sm:w-10/12 lg:w-9/12 xl:w-8/12">
         {!full && (
@@ -62,8 +61,6 @@ const ArtCollection = ({ full }: ArtCollectionProps) => {
         <Art
           header="David"
           text={[
-            // `Michelangelo's Statue of David is the perfection of the most famous sculpture in Florence and, perhaps, in all the world.`,
-            // `In 1501 Michelangelo was commissioned to create the David by the Arte della Lana (Guild of Wool Merchant), who were responsible for the upkeep and the decoration of the Cathedral in Florence.`,
             `Between 1501 and 1504, Michelangelo took over a commission for a statue of "David," which two prior sculptors had previously attempted and abandoned, and turned the 17-foot piece of marble into a dominating figure.`,
             `The strength of the statue's sinews, vulnerability of its nakedness, humanity of expression and overall courage made the "David" a highly prized representative of the city of Florence.`,
           ]}

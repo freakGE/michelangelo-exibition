@@ -30,12 +30,11 @@ const Navbar = ({ selected }: NavbarProps) => {
       left: 0,
       behavior: "smooth",
     });
-    //!
+
     setSelectedWidth(e.currentTarget.clientWidth);
     setCoordinateX(e.currentTarget.offsetLeft);
 
     dispatch(openHamburger(false));
-    //!
 
     const href = e.currentTarget.href.split("/");
 
@@ -96,36 +95,7 @@ const Navbar = ({ selected }: NavbarProps) => {
 
     return () => window.removeEventListener("scroll", onScroll);
   }, [scrollUp]);
-  //!!!!
-  // return (
-  //   <nav
-  //     className={`flex fixed justify-center py-5 w-full z-[10] md:w-[50vw]
-  //     duration-200
-  //     ${!hamburgerIsOpen && `backdrop-blur bg-dark bg-opacity-[65%]`}
-  //     `}
-  //   >
-  //     <div
-  //       className="hidden relative justify-between items-center text-2xl md:flex wrapper wrapper-navbar"
-  //       onMouseEnter={() => dispatch(changeCursor("textWhite"))}
-  //       onMouseLeave={() => dispatch(changeCursor("default"))}
-  //     >
-  //       <Link href="/" onClick={handleClick}>
-  //         Home
-  //       </Link>
-  //       <Link href="#About" onClick={handleClick}>
-  //         About
-  //       </Link>
-  //       <Link href="#" onClick={handleClick}>
-  //         Collection
-  //       </Link>
-  //       <div
-  //         className={`navbar-line`}
-  //         style={{ left: `${coordinateX}px`, width: `${selectedWidth}px` }}
-  //       ></div>
-  //     </div>
-  //     <HamburgerMenu />
-  //   </nav>
-  // );
+
   return (
     <AnimatePresence>
       {(scrollUp || hamburgerIsOpen) && (
@@ -133,10 +103,6 @@ const Navbar = ({ selected }: NavbarProps) => {
           initial={{ translateY: -500 }}
           animate={{ translateY: 0, transition: { duration: 0.25 } }}
           exit={{ translateY: -500, transition: { duration: 0.25 } }}
-          // style={{
-          //   transform: scrollUp ? `translateY(0%)` : `translateY(-100%)`,
-          //   transition: `all 0.25s cubic-bezier(0.645,0.045,0.355,1)`,
-          // }}
           className={`flex fixed justify-center py-5 w-full z-[10] md:w-[50vw]
     duration-200 rounded-br-lg
     ${

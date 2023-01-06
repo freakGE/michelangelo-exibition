@@ -48,22 +48,16 @@ export const Home = () => {
       <AnimatePresence>
         {!hamburgerIsOpen && (
           <motion.span
-            initial={{ x: `100%` }} //500
+            initial={{ x: `100%` }}
             animate={{ x: 0 }}
             transition={{ duration: 1 }}
-            exit={{ x: `100%`, transition: { duration: 0.75 } }} //500
+            exit={{ x: `100%`, transition: { duration: 0.75 } }}
             className={`home-bg`}
           ></motion.span>
         )}
       </AnimatePresence>
-      <div
-        className="relative z-[1] wrapper-container items-center w-full h-[75vh] 2xl:h-[82.5vh] flex-col"
-        // h-full
-      >
+      <div className="relative z-[1] wrapper-container items-center w-full h-[75vh] 2xl:h-[82.5vh] flex-col">
         <div
-          //!v1
-          // className={`flex overflow-hidden relative justify-center items-center w-11/12 pt-[3.25vh] sm:pt-[5vh] md:pt-[5.5vh] lg:pt-[7.5vh] lg:max-h-[31vh] md:max-h-[23vh] sm:max-h-[20vh] esm:max-h-[16vh] max-h-[13vh]  xl:max-h-[38.5vh] xl:pt-[9.5vh] 2xl:max-h-[46vh] 2xl:pt-[11.5vh]`}
-          //!v2
           className={`flex overflow-hidden relative justify-center items-center w-11/12 pt-[3.25vh] sm:pt-[5vh] md:pt-[5.5vh] lg:pt-[7.5vh] lg:max-h-[31vh] md:max-h-[23vh] sm:max-h-[20vh] esm:max-h-[16vh] max-h-[13vh]  xl:max-h-[38.5vh] xl:pt-[9.5vh] 2xl:max-h-[42.5vh] 2xl:pt-[6vh]`}
         >
           {animate > 0 && (
@@ -112,11 +106,9 @@ export const Home = () => {
                 src={michelangelo_david_head}
                 alt={"michelangelo_david_head"}
                 placeholder="blur"
-                // className="duration-[2000ms]"
                 style={{
                   zIndex: animate >= 4 ? 1 : 0,
                   objectFit: "cover",
-                  // transitionTimingFunction: "cubic-bezier(0.25,-0.1,1,-0.75)",
                   transitionDuration: animate >= 5 ? "0ms" : "2000ms",
                   transform: `translateY(${scroll / divider}px)`,
                 }}

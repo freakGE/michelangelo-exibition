@@ -14,10 +14,8 @@ const About = () => {
   const dispatch = useDispatch();
   const [arrowHover, setArrowHover] = useState(false);
   const [details, setDetails] = useState(false);
-  const [detailsAnimation, setDetailsAnimation] = useState(0);
 
   const [savedScroll, setSavedScroll] = useState<number | null>(null);
-  const [borderTop, setBorderTop] = useState(false);
 
   const [frontGround, setfrontGround] = useState(false);
   const [hiddenText, setHiddenText] = useState(false);
@@ -53,29 +51,6 @@ const About = () => {
         }, 650);
       }, 1500);
     }
-
-    // setBorderTop(true);
-    // if (details === false) {
-    //   setSavedScroll(scroll);
-    //   setDetails(true);
-    //   setDetailsAnimation(1);
-    //   setTimeout(() => {
-    //     setDetailsAnimation(0);
-    //     setBorderTop(false);
-    //   }, 2500);
-    // } else {
-    //   setDetailsAnimation(2);
-    //   setDetails(false);
-    //   setTimeout(() => setBorderTop(false), 3000);
-    //   if (savedScroll)
-    //     setTimeout(() => {
-    //       window.scroll({
-    //         top: savedScroll,
-    //         left: 0,
-    //         behavior: "smooth",
-    //       });
-    //     }, 1150);
-    // }
   };
 
   const michangeloBiography: Biography = [
@@ -129,10 +104,7 @@ const About = () => {
       id="aboutSection"
       className="w-full wrapper-container md:pb-[5rem] sm:pb-[4rem] pb-[3rem]"
     >
-      <div
-        // className="flex flex-col w-11/12 max-w-7xl" max-w-6xl
-        className="flex flex-col w-11/12 sm:w-10/12 lg:w-9/12 xl:w-8/12"
-      >
+      <div className="flex flex-col w-11/12 sm:w-10/12 lg:w-9/12 xl:w-8/12">
         <h1
           className="text-3xl uppercase border-b pb-[1rem] border-primary 
           w-3/4 sm:w-1/2"
@@ -187,11 +159,9 @@ const About = () => {
                 dispatch(changeCursor("default"));
                 setArrowHover(false);
               }}
-              // onClick={() => (!details ? handleArrowClick() : 0)}
               onClick={() => handleArrowClick()}
               style={{
                 transform: arrowHover ? "translateX(15px)" : "translateX(0px)",
-                // opacity: details ? `0%` : `100%`,
               }}
             >
               {details ? `Show less` : `More about biography`}
@@ -241,7 +211,6 @@ const About = () => {
                         />
                       )}
                     </AnimatePresence>
-                    {/* {o.title} */}
                     <span
                       className={`${hiddenText ? `opacity-0` : `opacity-100`}`}
                     >
@@ -276,7 +245,6 @@ const About = () => {
                             </motion.span>
                           )}
                         </AnimatePresence>
-                        {/* {text} */}
                         <span
                           className={`${
                             hiddenText ? `opacity-0` : `opacity-100`
@@ -332,146 +300,6 @@ const About = () => {
             })}
           </ol>
         )}
-        {/* 
-        <AnimatePresence>
-          {borderTop && (
-            <motion.span
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0, transition: { duration: 0.3 } }}
-              transition={{ duration: 0.5 }}
-              className=" w-full h-[1px] bg-primary"
-            />
-          )}
-        </AnimatePresence>
-        <div className="overflow-hidden">
-          <AnimatePresence>
-            {details && (
-              <motion.ol
-                className="flex overflow-hidden relative flex-col justify-center items-center w-full h-full" //mt-[1.1rem]
-                initial={{ translateY: `-100%` }}
-                animate={{ translateY: "0%" }}
-                exit={{
-                  translateY: `-100%`,
-                }}
-                transition={{ duration: 2.5 }}
-                style={{
-                  transitionDelay: detailsAnimation === 2 ? "500ms" : "0ms",
-                }}
-              >
-                <span
-                  className="absolute w-screen h-full backdrop-blur-[2px] transition-opacity ease-in"
-                  style={{
-                    transform:
-                      detailsAnimation === 1 || detailsAnimation === 2
-                        ? `translateY(0%)`
-                        : `translateY(100%)`,
-                    transitionDuration:
-                      detailsAnimation === 1
-                        ? `0ms`
-                        : detailsAnimation === 2
-                        ? `1000ms`
-                        : `1500ms`,
-                    opacity:
-                      detailsAnimation === 1 || detailsAnimation === 2
-                        ? 100
-                        : 0,
-                  }}
-                ></span>
-
-                {michangeloBiography.map((o, i) => {
-                  return (
-                    <li key={o.title} className="flex flex-col para-text">
-                      <h1
-                        className="text-lg lg:text-xl uppercase text-secondary pb-[0.1rem] "
-                        onMouseEnter={() => dispatch(changeCursor("text"))}
-                        onMouseLeave={() => dispatch(changeCursor("default"))}
-                      >
-                        {o.title}
-                      </h1>
-                      {o.text.map((text, k) => {
-                        return (
-                          <p
-                            key={k}
-                            className="pb-[1.1rem]"
-                            onMouseEnter={() =>
-                              dispatch(changeCursor("textWhite"))
-                            }
-                            onMouseLeave={() =>
-                              dispatch(changeCursor("default"))
-                            }
-                          >
-                            {text}
-                          </p>
-                        );
-                      })}
-                      {i === michangeloBiography.length - 1 && (
-                        <button
-                          className="flex uppercase duration-500 text-secondary my-[1.1rem]"
-                          onMouseEnter={() => {
-                            dispatch(changeCursor("text"));
-                            setArrowHover(true);
-                          }}
-                          onMouseLeave={() => {
-                            dispatch(changeCursor("default"));
-                            setArrowHover(false);
-                          }}
-                          onClick={() => handleArrowClick()}
-                          style={{
-                            transform: arrowHover
-                              ? "translateX(15px)"
-                              : "translateX(0px)",
-
-                            opacity: !details ? `0%` : `100%`,
-                          }}
-                        >
-                          Show less
-                          <span className="ml-[1rem] h-full">
-                            <svg
-                              className="h-full"
-                              viewBox="0 0 102 51"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M102 25L77 50V46L98 25L77 4V0L102 25Z"
-                                fill="#9E8D74"
-                              />
-                              <line
-                                y1="26.5"
-                                x2="100"
-                                y2="26.5"
-                                stroke="#9E8D74"
-                              />
-                              <line
-                                y1="25.5"
-                                x2="100"
-                                y2="25.5"
-                                stroke="#9E8D74"
-                              />
-                              <line
-                                y1="24.5"
-                                x2="100"
-                                y2="24.5"
-                                stroke="#9E8D74"
-                              />
-                              <line
-                                y1="23.5"
-                                x2="100"
-                                y2="23.5"
-                                stroke="#9E8D74"
-                              />
-                            </svg>
-                          </span>
-                        </button>
-                      )}
-                    </li>
-                  );
-                })}
-              </motion.ol>
-            )}
-          </AnimatePresence>
-        </div>*/}
       </div>
     </section>
   );

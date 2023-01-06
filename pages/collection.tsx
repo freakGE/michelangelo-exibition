@@ -1,4 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
+import Head from "next/head";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -21,6 +22,27 @@ const Collection = () => {
 
   return (
     <>
+      <Head>
+        <title>Michelangelo Exhibition - Art Collection</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+          name="description"
+          content="Artworks from the Michelangelo Exhibition"
+        />
+        <meta
+          name="keywords"
+          content="Michelangelo, Exhibition, Michelangelo Exhibition, Art Collection, Art, Artworks"
+        />
+        <meta
+          property="og:title"
+          content="Michelangelo Exhibition - Art Collection"
+        />
+        <meta
+          property="og:description"
+          content="Artworks from the Michelangelo Exhibition"
+        />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <div className="w-screen h-screen z-[0] relative overflow-hidden mb-[5rem] flex justify-center items-center">
         <AnimatePresence>
           {!hamburgerIsOpen && (

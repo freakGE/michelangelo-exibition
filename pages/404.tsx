@@ -7,6 +7,7 @@ import { changeCursor } from "../features/cursorSlice";
 import { getHamburger } from "../features/hamburgerSlice";
 import godImg from "../public/god-transparent.webp";
 import { useEffect, useState } from "react";
+import Head from "next/head";
 
 const NotFound = () => {
   const dispatch = useDispatch();
@@ -30,6 +31,12 @@ const NotFound = () => {
 
   return (
     <>
+      <Head>
+        <title>404 - Page Not Found</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta property="og:title" content="404 - Page Not Found" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <div className="w-screen h-screen z-[0] relative overflow-hidden flex justify-center items-center">
         <AnimatePresence>
           {!hamburgerIsOpen && (

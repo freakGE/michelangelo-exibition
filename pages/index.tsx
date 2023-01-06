@@ -40,6 +40,10 @@ export default function Main() {
           property="og:description"
           content="Michelangelo Exhibition main page"
         />
+        <meta
+          property="og:image"
+          content="https://michelangelo-exibition.vercel.app/thumbnail.png"
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>

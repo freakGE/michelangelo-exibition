@@ -41,6 +41,10 @@ const Collection = () => {
           property="og:description"
           content="Artworks from the Michelangelo Exhibition"
         />
+        <meta
+          property="og:image"
+          content="https://michelangelo-exibition.vercel.app/thumbnail.png"
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="w-screen h-screen z-[0] relative overflow-hidden mb-[5rem] flex justify-center items-center">

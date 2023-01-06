@@ -35,6 +35,10 @@ const NotFound = () => {
         <title>404 - Page Not Found</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta property="og:title" content="404 - Page Not Found" />
+        <meta
+          property="og:image"
+          content="https://michelangelo-exibition.vercel.app/thumbnail.png"
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="w-screen h-screen z-[0] relative overflow-hidden flex justify-center items-center">

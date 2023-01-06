@@ -5,6 +5,10 @@
   </a>
   <h1 align="center">Michelangelo Exhibition</h1>
   <img src="public/thumbnail.png" alt="Michelangelo Exhibition main page">
+
+   <h3 align="center">
+    <a href="https://michelangelo-exibition.vercel.app">View Demo</a>
+  </h3>
 </div>
 
 ## About The Project

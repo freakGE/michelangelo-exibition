@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  cursor: none !important;
+  @apply box-border p-0 m-0;
+}
+
+html,
+body {
+  @apply bg-dark text-primary max-w-[100vw] overflow-x-hidden font-nunito;
+}
+
+.cursor {
+  @apply rounded-full fixed top-0 left-0 z-[50] pointer-events-none  mix-blend-difference;
+}
+
+@media only screen and (max-width: 767px) {
+  * {
+    cursor: default !important;
+  }
+  body .cursor {
+    display: none !important;
+  }
+}
+
+.wrapper-container {
+  @apply w-screen flex justify-center;
+}
+.wrapper {
+  @apply max-w-[80rem] esm:w-10/12 w-11/12;
+}
+
+.wrapper-navbar {
+  @apply max-w-[20rem];
+}
+
+.navbar-line {
+  @apply absolute -bottom-1 duration-500 ease-in-out h-1 bg-secondary;
+}
+.modal-line {
+  // @apply absolute -right-3 duration-500 ease-in-out w-1 bg-primary;
+  @apply absolute right-[-1rem] duration-500 ease-in-out w-1 bg-dark;
+}
+
+.home-bg {
+  @apply absolute right-0 w-[50vw] h-full z-0 bg-secondary;
+}
+
+.home-header {
+  @apply uppercase text-2xl tiny:text-3xl;
+
+  @media (min-width: 440px) {
+    @apply text-4xl esm:text-3xl sm:text-4xl;
+  }
+  @media (min-width: 820px) {
+    @apply text-5xl lg:text-6xl xl:text-7xl;
+  }
+  @media (min-width: 1620px) {
+    @apply text-8xl;
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+  }
+  50% {
+    transform: translateX(-10px);
+  }
+  70% {
+    transform: translateX(5px);
+  }
+  90% {
+    transform: translateX(-2px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+  70% {
+    transform: translateX(-5px);
+  }
+  90% {
+    transform: translateX(2px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.slide-left {
+  animation: slideInFromRight 3s ease-in-out;
+}
+.slide-right {
+  animation: slideInFromLeft 3s ease-in-out;
+}
+
+.para-text {
+  @apply text-base lg:text-lg;
+}
+
+.moreBiography {
+  @media (min-width: 1616px) {
+    @apply absolute pb-0;
+  }
+}
+
+.btnArrow {
+  @apply text-base lg:text-lg 2xl:text-xl;
+}
